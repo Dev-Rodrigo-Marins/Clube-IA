@@ -2,16 +2,16 @@
 
 ## Voce vai precisar dos seguintes componentes
 
-- 01 - PLaca ESP32  
-- 01 - Camera OV7670
-- 20 - Cabos jumpers femea x femea
+- 01 - PLaca ESP32  💻
+- 01 - Camera OV7670 📸
+- 20 - Cabos jumpers femea x femea 🔌
 - 01 - Fonte de alimentação para placa ESP32
-- 01 - Cabo de transmissão de dados USB x Micro USB
-- 01 - Instalar o software IDE Arduino e as bibliotecas necessarias
+- 01 - Cabo de transmissão de dados USB x Micro USB 🔌
+- 01 - Instalar o software IDE Arduino e as bibliotecas necessarias 👨‍💻
 
 ## Tutorial passo a passo
 
-**1 - PASSO INSTALAR O DRIVER DA PLACA ESP32 CONFORME O CHIP CONVERSOR USB**   
+**1 - PASSO INSTALAR O DRIVER DA PLACA ESP32 CONFORME O CHIP CONVERSOR USB**💻   
 Os chips conversores podem ser **CP210X** ou **CH340G**   abaixo temos o link com mais detalhes para identificar 
 o chip conversor da sua placa.
 
@@ -32,7 +32,7 @@ os drives podem ser baixados diretamente pelos links abaixo
 
 
 
-**2 - PASSO CONECTAR A SUA PLACA ESP32 AO COMPUTADOR E EXECUTAR O PROGRAMA BLINK ( faz o LED piscar )**  
+**2 - PASSO CONECTAR A SUA PLACA ESP32 AO COMPUTADOR E EXECUTAR O PROGRAMA BLINK ( faz o LED piscar )**💻👨‍💻🔌  
 Este passo serve para testar se a interface de programação reconhece a placa com o driver instalado,  testar a transmissao de dados 
 via cabo usb para placa, e testar a alimentação e funcionamento basico da placa a ser utilizada!
 
@@ -40,25 +40,25 @@ OBS: Caso tenha total certeza do funcionamento da placa e do cabo de transmissao
 
 
 
-**3 - PASSO INSTALAR O PROGRAMA IDE ARDUINO**
+**3 - PASSO INSTALAR O PROGRAMA IDE ARDUINO**👨‍💻  
 O programa pode ser baixado diretamente do site oficial clicando no link abaixo    
 - [IDE_Arduino](https://www.arduino.cc/en/software)
 
 
 
-**4 - PASSO INSTALAR AS BIBLIOTECAS NA IDE ARDUINO**
+**4 - PASSO INSTALAR AS BIBLIOTECAS NA IDE ARDUINO**👨‍💻  
 siga o tutorial no site abaixo para instalar as bibliotecas necessarias para a IDE Arduino reconhecere corretamente sua placa ESP   
 - [DOIT ESP32 DEVKIT v1](https://lobodarobotica.com/blog/como-instalar-esp32-ide-arduino/)  
 
 
 
-**5 - PASSO INSTALAR AS BIBLIOTECAS NA IDE ARDUINO** 
+**5 - PASSO INSTALAR AS BIBLIOTECAS NA IDE ARDUINO** 👨‍💻
 - Adafruit GFX (Adafruit_GFX.h) 
 - Adafruit ST7735 (Adafruit_ST7735.h)
 
 
 
- **6 - PASSO CONECTAR A PLACA ESP32 A CAMERA OV7670**
+ **6 - PASSO CONECTAR A PLACA ESP32 A CAMERA OV7670**💻👨‍💻🔌
  - Inserir imagem do diagrama de conexao ESP32 + OV7670
 
   
