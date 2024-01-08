@@ -60,5 +60,5 @@ siga o tutorial no site abaixo para instalar as bibliotecas necessarias para a I
 
  **6 - PASSO CONECTAR A PLACA ESP32 A CAMERA OV7670**💻👨‍💻🔌
  - Inserir imagem do diagrama de conexao ESP32 + OV7670
-
+<img src="src/imagens/123.PNG" alt="Minha Figura">
   
