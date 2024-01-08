@@ -32,7 +32,7 @@ os drives podem ser baixados diretamente pelos links abaixo
 
 
 
-**2 - PASSO CONECTAR A SUA PLACA ESP32 AO COMPUTADOR E EXECUTAR O PROGRAMA BLINK ( faz o LED piscar )**💻👨‍💻🔌  
+**2 - PASSO CONECTAR A SUA PLACA ESP32 AO COMPUTADOR E EXECUTAR O PROGRAMA BLINK**( faz o LED piscar )💻👨‍💻🔌  
 Este passo serve para testar se a interface de programação reconhece a placa com o driver instalado,  testar a transmissao de dados 
 via cabo usb para placa, e testar a alimentação e funcionamento basico da placa a ser utilizada!
 
