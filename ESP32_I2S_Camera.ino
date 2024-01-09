@@ -31,8 +31,8 @@ const int TFT_CS = 5;
 //DIN <- MOSI 23
 //CLK <- SCK 18
 
-#define ssid1        "Redmi Note 11"
-#define password1    "h554unth7qj99fh"
+#define ssid1        "Aqui vai o nome da rede Wifi"  // Nome da rede Wifi
+#define password1    "Aqui vai a senha da rede wifi" // Senha da rede Wifi
 //#define ssid2        ""
 //#define password2    ""
 
