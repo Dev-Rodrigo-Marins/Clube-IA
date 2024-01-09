@@ -62,5 +62,29 @@ siga o tutorial no site abaixo para instalar as bibliotecas necessarias para a I
 
  **6 - PASSO CONECTAR A PLACA ESP32 A CAMERA OV7670**💻👨‍💻🔌
  - Inserir imagem do diagrama de conexao ESP32 + OV7670
-<img src="src/imagens/123.PNG" alt="Minha Figura">
+<img src="src/imagens/diagramacao.png" alt="Minha Figura">
+
+
+  **7 - PASSO INSERIR SSID E SENHA DA REDE WIFI PARA CONEXÃO VIA HTTP COM A CAMERA NO CODIGO**💻👨‍💻🔌  
+  Modificar o arquivo ESP_L2S_Camera.ino nas linhas 34 e 35   incluindo o SSID ( nome da rede WIFI) e a senha dentro do codigo.  
+<img src="src/imagens/nswifi.png" alt="Minha Figura">
   
+Após realizado esse procedimento, o codigo deve ser compilado e enviado a placa esp32... na interface do IDE ARDUINO
+quando aparecer a mensagem Conecting... ( enquanto estiver carregando os pontinhos, pressione o botão BOOT na placa)  
+isso vai permitir que o codigo seja gravado na placa corretamente!  
+
+- Inserir a imagem da gravação do codigo na ESP32 pelo IDE Arduino ( Conecting )
+
+Será necessario configurar a saida em 11520 Pounds na interface do Ide Arduino para conseguir visualizar o IP da placa
+para realizar a conexão com a camera via http, acessando o link no seu navegador padrao http://xxx.xxx.xxx.xxx/camera  
+conforme as imagens na sequencia.  
+
+- Inserir imagem da configuração dos pounds na IDE Arduino
+- Inserir imagem da mensagem do IP da camera na serial ploter
+- Inserir imagem do acesso a camera via navegador pelo link.
+
+**8 - PASSO escrever o codigo em python para acessar o link e salvar a imagem da camera em uma pasta especifica**💻👨‍💻🔌
+**9 - PASSO criar um modelo de machine learning para identificar o tipo de lixo seco, organico,papel,metal**💻👨‍💻🔌
+**10 - PASSO escrever o codigo para que o modelo de ML pegue a imagem da camera e a classifique**💻👨‍💻🔌
+**11 - PASSO escrever o codigo de retorno do ML para a ESP32, sinalizando a classificação do lixo obtida**💻👨‍💻🔌  
+
