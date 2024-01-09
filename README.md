@@ -15,6 +15,8 @@
 Os chips conversores podem ser **CP210X** ou **CH340G**   abaixo temos o link com mais detalhes para identificar 
 o chip conversor da sua placa.
 
+<img src="src/imagens/conversor_usb_esp32.png" alt="Minha Figura">
+
 - [LINK ROBOCORE](https://www.robocore.net/tutoriais/instalando-driver-do-nodemcu?gad_source=1&gclid=CjwKCAiA1-6sBhAoEiwArqlGPoSBKq6nlbg5s1_0agZqCzmkurMGCsVrqhLdadiycJBM9h4euCjFcxoCx_YQAvD_BwE)
 
 os drives podem ser baixados diretamente pelos links abaixo 
