@@ -8,6 +8,8 @@
 - 01 - Fonte de alimentação para placa ESP32
 - 01 - Cabo de transmissão de dados USB x Micro USB 🔌
 - 01 - Instalar o software IDE Arduino e as bibliotecas necessarias 👨‍💻
+- 01 - Instalar o python 3.09 ou superior 👨‍💻
+- 01 - Instalar as bibliotecas pyhton REQUESTS, IMAGE, BytesIO 👨‍💻
 
 ## Tutorial passo a passo
 
@@ -76,9 +78,9 @@ isso vai permitir que o codigo seja gravado na placa corretamente!
 -Inserir a imagem da gravação do codigo na ESP32 pelo IDE Arduino
 ```
 
-Será necessario configurar a saida em 11520 Pounds na interface do Ide Arduino para conseguir visualizar o IP da placa
-para realizar a conexão com a camera via http, acessando o link no seu navegador padrao http://xxx.xxx.xxx.xxx/camera  
-conforme as imagens na sequencia.  
+Será necessario configurar a saida em 115200 Pounds na interface do Ide Arduino para conseguir visualizar o IP da placa
+para realizar a conexão com a camera via http, acessando o link no seu navegador padrao http://ip.da.sua.esp32/camera  
+conforme as imagens na sequencia. (isso evita que voce tenha dor de cabeça com a porta serial).  
 ```diff
 
 - Inserir imagem da configuração dos pounds na IDE Arduino
@@ -87,10 +89,10 @@ conforme as imagens na sequencia.
  ```
   
 ```diff
-@@**8 - PASSO escrever o codigo em python para acessar o link e salvar a imagem da camera em uma pasta especifica**@@💻👨‍💻🔌  
-- Considere usar uma biblioteca como requests para facilitar a comunicação HTTP com a câmera.  
-- Implemente um código em Python para acessar o link da câmera, baixar a imagem e salvá-la em uma pasta local no seu computador.  
-- Adicione uma lógica para rotacionar ou ajustar a imagem conforme necessário.
+@@**8 - PASSO Atenção será necessario ajustar o codigo captura_frame.py**@@💻👨‍💻🔌  
+- Ajuste o ip da esp32 no codigo do arquivo captura_frame.py.  
+- Ajuste o caminho onde o frame capturado vai ser salvo ( ajustando conforme o caminho no seu SO).  
+
   
 @@**9 - PASSO criar um modelo de machine learning para identificar o tipo de lixo seco, organico,papel,metal**@@💻👨‍💻🔌  
 - Utilize bibliotecas populares de aprendizado de máquina, como TensorFlow ou PyTorch, para criar e treinar seu modelo.
