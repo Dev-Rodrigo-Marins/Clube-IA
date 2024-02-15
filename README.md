@@ -81,8 +81,8 @@ isso vai permitir que o codigo seja gravado na placa corretamente!
 Será necessario configurar a saida em 115200 Pounds na interface do Ide Arduino para conseguir visualizar o IP da placa
 para realizar a conexão com a camera via http, acessando o link no seu navegador padrao http://ip.da.sua.esp32/camera  
 conforme as imagens na sequencia. (isso evita que voce tenha dor de cabeça com a porta serial).  
-```diff
 
+```diff
 - Inserir imagem da configuração dos pounds na IDE Arduino
 - Inserir imagem da mensagem do IP da camera na serial ploter
 - Inserir imagem do acesso a camera via navegador pelo link.
@@ -91,19 +91,25 @@ conforme as imagens na sequencia. (isso evita que voce tenha dor de cabeça com 
 ```diff
 @@**8 - PASSO Atenção será necessario ajustar o codigo captura_frame.py**@@💻👨‍💻🔌  
 - Ajuste o ip da esp32 no codigo do arquivo captura_frame.py.  
-- Ajuste o caminho onde o frame capturado vai ser salvo ( ajustando conforme o caminho no seu SO).  
-
+- Ajuste o caminho onde o frame capturado vai ser salvo ( ajustando conforme o caminho no seu SO).
+```
   
-@@**9 - PASSO criar um modelo de machine learning para identificar o tipo de lixo seco, organico,papel,metal**@@💻👨‍💻🔌  
+```diff
+@@**9 - PASSO baixar imagens para o dataset conforme o tipo de lixo seco, organico,papel,metal**@@💻👨‍💻🔌
+- Baixar imagens com a biblioteca do bing usando python.
+- Usar o LabelImg para realizar a classificação manual da imagem para pré-treinamento dos dados com YOLO. 
 - Utilize bibliotecas populares de aprendizado de máquina, como TensorFlow ou PyTorch, para criar e treinar seu modelo.
-- Garanta que você tenha um conjunto de dados adequado e rotulado para treinar o modelo.
-- Considere técnicas de pré-processamento de imagem, como redimensionamento e normalização, para melhorar a eficácia do modelo.
-  
+```
+
+```diff
 @@**10 - PASSO escrever o codigo para que o modelo de ML pegue a imagem da camera e a classifique**@@💻👨‍💻🔌  
 - Integre o modelo treinado com o código Python para que ele possa receber imagens da câmera e fornecer classificações.
 - Teste o modelo com diferentes tipos de lixo para garantir sua precisão.
-  
+```
+
+```diff
 @@**11 - PASSO escrever o codigo de retorno do ML para a ESP32, sinalizando a classificação do lixo obtida**@@💻👨‍💻🔌  
 - Configure uma comunicação entre o código Python e a ESP32 para enviar a classificação de volta.  
-- Pode ser útil usar um formato de mensagem simples, como JSON, para transmitir as informações.  
+- Pode ser útil usar um formato de mensagem simples, como JSON, para transmitir as informações.
+- Poder ser possivel criar 4 links https para cada tipo de saida de lixo. e uma para uma saida não identificada! 
 ```
