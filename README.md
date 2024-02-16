@@ -74,25 +74,25 @@ siga o tutorial no site abaixo para instalar as bibliotecas necessarias para a I
 Após realizado esse procedimento, o codigo deve ser compilado e enviado a placa esp32... na interface do IDE ARDUINO
 quando aparecer a mensagem Conecting... ( enquanto estiver carregando os pontinhos, pressione o botão BOOT na placa)  
 isso vai permitir que o codigo seja gravado na placa corretamente!  
-```diff -
--Inserir a imagem da gravação do codigo na ESP32 pelo IDE Arduino
-```
 
-Será necessario configurar a saida em 115200 Pounds na interface do Ide Arduino para conseguir visualizar o IP da placa
+<img src="src/imagens/DualtechTalk.png" alt="Minha Figura">
+<img src="src/imagens/DualtechTalk2.png" alt="Minha Figura">
+
+imagens retiradas do canal - [Dual_Tech_talk](https://www.youtube.com/@duotechtalk)
+
+Será necessario configurar a saida em 115200 Pounds na interface do monitor serial no Ide Arduino para conseguir visualizar o IP da placa
 para realizar a conexão com a camera via http, acessando o link no seu navegador padrao http://ip.da.sua.esp32/camera  
 conforme as imagens na sequencia. (isso evita que voce tenha dor de cabeça com a porta serial).  
 
-```diff
-- Inserir imagem da configuração dos pounds na IDE Arduino
-- Inserir imagem da mensagem do IP da camera na serial ploter
-- Inserir imagem do acesso a camera via navegador pelo link.
- ```
-  
-```diff
+
+
 @@**8 - PASSO Atenção será necessario ajustar o codigo captura_frame.py**@@💻👨‍💻🔌  
-- Ajuste o ip da esp32 no codigo do arquivo captura_frame.py.  
+- Ajuste o ip da esp32 no codigo do arquivo captura_frame.py.
 - Ajuste o caminho onde o frame capturado vai ser salvo ( ajustando conforme o caminho no seu SO).
-```
+
+<img src="src/imagens/Capturapyframe.png" alt="Minha Figura">
+  
+
   
 ```diff
 @@**9 - PASSO baixar imagens para o dataset conforme o tipo de lixo seco, organico,papel,metal**@@💻👨‍💻🔌
