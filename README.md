@@ -113,3 +113,9 @@ conforme as imagens na sequencia. (isso evita que voce tenha dor de cabeça com 
 - Pode ser útil usar um formato de mensagem simples, como JSON, para transmitir as informações.
 - Poder ser possivel criar 4 links https para cada tipo de saida de lixo. e uma para uma saida não identificada! 
 ```
+
+```diff
+@@**12 - PASSO como tratar as imagens que o modelo não conseguir identificar*@@💻👨‍💻🔌  
+- Salvar numa pasta no computador onde estara rodando o modelo... e notificar o adm para retreino do modelo quando atingir 100 arquivos.  
+- validar salvar em banco pode tornar lento... capacidade do processador livree ???.
+```
