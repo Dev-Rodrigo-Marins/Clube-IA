@@ -52,7 +52,9 @@ O programa pode ser baixado diretamente do site oficial clicando no link abaixo
 
 **4 - PASSO INSTALAR AS BIBLIOTECAS NA IDE ARDUINO**👨‍💻  
 siga o tutorial no site abaixo para instalar as bibliotecas necessarias para a IDE Arduino reconhecere corretamente sua placa ESP   
-- [DOIT ESP32 DEVKIT v1](https://lobodarobotica.com/blog/como-instalar-esp32-ide-arduino/)  
+- [DOIT ESP32 DEVKIT v1](https://lobodarobotica.com/blog/como-instalar-esp32-ide-arduino/)
+- USAR A BIBLIOTECA CONTROLADORA DE PLACA ESP32 DA EXPRESSIF NA VERSAO 2.0.17... versões superiores tiveram alterações nas modulos e quebram a aplicação atual.
+
 
 
 
