@@ -1,0 +1,41 @@
+#include <WiFi.h>
+#include <HTTPClient.h>
+
+const char* ssid = "YOUR_SSID";
+const char* password = "YOUR_PASSWORD";
+const char* serverUrl = "http://<SEU_IP_LOCAL>:5000/button_pressed";  // Substitua <SEU_IP_LOCAL> pelo IP do seu computador
+
+const int buttonPin = 0;  // Ajuste o pino conforme sua configuração
+
+void setup() {
+  Serial.begin(115200);
+  WiFi.begin(ssid, password);
+  
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(1000);
+    Serial.println("Connecting to WiFi...");
+  }
+  Serial.println("Connected to WiFi");
+  
+  pinMode(buttonPin, INPUT_PULLUP);  // Configura o pino do botão como entrada com resistor pull-up
+}
+
+void loop() {
+  if (digitalRead(buttonPin) == LOW) {  // Verifica se o botão foi pressionado
+    HTTPClient http;
+    http.begin(serverUrl);
+    http.addHeader("Content-Type", "application/x-www-form-urlencoded");
+    
+    int httpResponseCode = http.POST("button=pressed");
+    
+    if (httpResponseCode > 0) {
+      Serial.println("Requisição POST enviada");
+    } else {
+      Serial.println("Erro ao enviar requisição");
+    }
+    
+    http.end();
+    
+    delay(1000);  // Debounce para evitar múltiplas requisições
+  }
+}
