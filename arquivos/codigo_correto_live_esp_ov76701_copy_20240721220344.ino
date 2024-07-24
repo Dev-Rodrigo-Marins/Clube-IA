@@ -1,24 +1,18 @@
 #include "OV7670.h"
-
 #include <Adafruit_GFX.h>    // Core graphics library
 #include <Adafruit_ST7735.h> // Hardware-specific library
-
 #include <WiFi.h>
 #include <WiFiMulti.h>
 #include <WiFiClient.h>
 #include "BMP.h"
 #include <HTTPClient.h>
 
-
 const int SIOD = 21; //SDA
 const int SIOC = 22; //SCL
-
 const int VSYNC = 34;
 const int HREF = 35;
-
 const int XCLK = 32;
 const int PCLK = 33;
-
 const int D0 = 27;
 const int D1 = 25;
 const int D2 = 26;
@@ -27,20 +21,14 @@ const int D4 = 14;
 const int D5 = 13;
 const int D6 = 12;
 const int D7 = 4;
-
 const int TFT_DC = 2;
 const int TFT_CS = 5;
-//DIN <- MOSI 23
-//CLK <- SCK 18
 
 #define ssid1        "VempraUno_5764"  // Nome da rede Wifi
 #define password1    "18801705" // Senha da rede Wifi
-//#define ssid2        ""
-//#define password2    ""
 
 const char* serverUrl = "http://192.168.0.105:5000/button_pressed";  // Substitua <SEU_IP_LOCAL> pelo IP do seu computador
 const int buttonPin = 5;  // Ajuste o pino conforme sua configuração para colocar o pino de start(touch)
-
 
 Adafruit_ST7735 tft = Adafruit_ST7735(TFT_CS,  TFT_DC, 0/*no reset*/);
 OV7670 *camera;
@@ -111,22 +99,11 @@ void setup()
 {
     delay(5000);
     Serial.begin(115200);
-  // Serial.println("teste");
-
-
-  wifiMulti.addAP(ssid1, password1);
-  //wifiMulti.addAP(ssid2, password2);
-  // Serial.println("Connecting Wifi...");
+   wifiMulti.addAP(ssid1, password1);
+ 
   if(wifiMulti.run() == WL_CONNECTED) {
-      // Serial.println("");
-      // Serial.println("WiFi connected");
-      // Serial.println("IP address: ");
-      Serial.println(WiFi.localIP());
-        // Serial.println("test2");
-
-  }   //Serial.println("teste3");
-
-
+     Serial.println(WiFi.localIP());
+     }
   
   camera = new OV7670(OV7670::Mode::QQVGA_RGB565, SIOD, SIOC, VSYNC, HREF, XCLK, PCLK, D0, D1, D2, D3, D4, D5, D6, D7);
   BMP::construct16BitHeader(bmpHeader, camera->xres, camera->yres);
