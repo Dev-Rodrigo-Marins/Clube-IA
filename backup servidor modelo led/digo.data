@@ -1,5 +1,0 @@
-classes= 4
-train  = /home/rodrigo/Arduino/Octos/codigo_correto_live_esp_ov76701_copy_20240721220344/darknet/train.txt
-valid  = /home/rodrigo/Arduino/Octos/codigo_correto_live_esp_ov76701_copy_20240721220344/darknet/test.txt
-names = /home/rodrigo/Arduino/Octos/codigo_correto_live_esp_ov76701_copy_20240721220344/darknet/classes.txt	
-backup = /home/rodrigo/Arduino/Octos/codigo_correto_live_esp_ov76701_copy_20240721220344/darknet/backup_treinamento	
