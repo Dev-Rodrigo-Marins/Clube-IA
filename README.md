@@ -88,36 +88,69 @@ conforme as imagens na sequencia. (isso evita que voce tenha dor de cabeça com 
 
 
 
-@@**8 - PASSO Atenção será necessario ajustar o codigo captura_frame.py**@@💻👨‍💻🔌  
+**8 - PASSO AJUSTAR O CODIGO NO ARQUIVO CAPTURA_FRAME.PY**  
 - Ajuste o ip da esp32 no codigo do arquivo captura_frame.py.
 - Ajuste o caminho onde o frame capturado vai ser salvo ( ajustando conforme o caminho no seu SO).
 
 <img src="src/imagens/Capturapyframe.png" alt="Minha Figura">
   
 
-  
-```diff
-@@**9 - PASSO baixar imagens para o dataset conforme o tipo de lixo seco, organico,papel,metal**@@💻👨‍💻🔌
+**9 - PASSO BAIXAR IMAGENS PARA O DATASET - conforme o tipo de lixo seco, organico,papel,metal**@@💻👨‍💻🔌
 - Baixar imagens com a biblioteca do bing usando python.
 - Usar o LabelImg para realizar a classificação manual da imagem para pré-treinamento dos dados com YOLO. 
-- Utilize bibliotecas populares de aprendizado de máquina, como TensorFlow ou PyTorch, para criar e treinar seu modelo.
-```
 
-```diff
-@@**10 - PASSO escrever o codigo para que o modelo de ML pegue a imagem da camera e a classifique**@@💻👨‍💻🔌  
-- Integre o modelo treinado com o código Python para que ele possa receber imagens da câmera e fornecer classificações.
-- Teste o modelo com diferentes tipos de lixo para garantir sua precisão.
-```
+- referencias no youtube:
+  
+  [Como treinar uma rede yolo do zero - AiNSTEiNSbr](https://www.youtube.com/watch?v=8L3PCqADFPo&t=410s)
+  
+  [Detecção de Objetos - Criação de um Dataset Manual (YOLO e LabelImg)-Café e Computação](https://www.youtube.com/watch?v=lNmqxsFCUk0&t=8s)
 
-```diff
-@@**11 - PASSO escrever o codigo de retorno do ML para a ESP32, sinalizando a classificação do lixo obtida**@@💻👨‍💻🔌  
-- Configure uma comunicação entre o código Python e a ESP32 para enviar a classificação de volta.  
-- Pode ser útil usar um formato de mensagem simples, como JSON, para transmitir as informações.
-- Poder ser possivel criar 4 links https para cada tipo de saida de lixo. e uma para uma saida não identificada! 
-```
 
-```diff
-@@**12 - PASSO como tratar as imagens que o modelo não conseguir identificar*@@💻👨‍💻🔌  
-- Salvar numa pasta no computador onde estara rodando o modelo... e notificar o adm para retreino do modelo quando atingir 100 arquivos.  
-- validar salvar em banco pode tornar lento... capacidade do processador livree ???.
-```
+
+  
+**10 - PASSO TREINAR O SEU MODELO, caso nao tenha gpu dedicada o canal Café e Computação mostra um forma simples de fazer isso**
+utilizando a computação em nuvem do google colab.
+  [Detecção de Objetos - YOLO implementado com o Darknet no COLAB-Café e Computação](https://www.youtube.com/watch?v=4NZSbzUCa4s)
+
+  Para usar o seu modelo YOLO, substitir os arquivos abaixo:
+  
+  - darknet/digo.cfg -> seu.cfg
+  - darknet/digo.data -> seu.data
+  - darknet/digo_8000.weigths -> seus_pesos.weigths
+
+  Garantir que a pasta imagemsaida exista
+  
+  Fazendo isso e a logica, não mudando, voce pode rodar o arquivo servidor.py
+
+
+
+
+  
+**11 - PASSO FINAL: TESTAR A LIXEIRA INTELIGENTE**
+
+Após configurar tudo e substituir o modelo (se necessário):
+
+11.1- **Transferir o código para a ESP32**  
+   - Compile e envie o arquivo `ESP_L2S_Camera.ino` para a placa usando a IDE Arduino.  
+   - Pressione o botão `BOOT` quando solicitado para gravar o código corretamente.
+
+11.2- **Iniciar o servidor Flask**  
+   - No computador, ative o ambiente virtual (se estiver usando) e execute:
+     ```bash
+     python3 servidor.py
+     ```
+   - O servidor ficará escutando requisições na porta `5000`.
+
+11.3- **Apertar o botão físico na lixeira**  
+   - Isso enviará um POST para o servidor Flask, que irá capturar a imagem da câmera.
+
+11.4- **Aguardar o resultado do modelo YOLO**  
+   - O servidor processará a imagem e acionará o LED correspondente na ESP32 conforme a classe detectada:  
+     - Papel → LED Azul  
+     - Plástico → LED Vermelho  
+     - Metal → LED Amarelo  
+     - Orgânico → LED Verde  
+
+11.5- **Verificar a imagem processada**  
+   - Caso a classe não seja detectada, a imagem será salva em `imagemsaida/` com timestamp para análise posterior.
+
